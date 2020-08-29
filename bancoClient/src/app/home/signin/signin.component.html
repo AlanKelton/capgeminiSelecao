@@ -1,0 +1,46 @@
+<div class="h-100 bg-plum-plate bg-animation">
+    <div class="d-flex h-100 justify-content-center align-items-center">
+        <div class="mx-auto app-login-box col-md-8">
+            <div class="app-logo-inverse mx-auto mb-3"></div>
+            <div class="modal-dialog w-100 mx-auto">
+                <div class="modal-content">
+                    <form [formGroup]="loginForm" (submit)="login()">
+                        <div class="modal-body">
+                            <div class="h5 modal-title text-center">
+                                <h4 class="mt-2">
+                                    <div>Bem vindo,</div>
+                                    <span>Acesse sua conta abaixo:</span>
+                                </h4>
+                            </div>
+                            <mw-vmessage *ngIf="error"
+                                text="Wrong email or password." class="mb-2">
+                                </mw-vmessage>
+                            <div id="exampleInputGroup1" role="group"
+                                aria-describedby="exampleInputGroup1__BV_description_" class="form-group">
+                                <div><input formControlName="userName" id="exampleInput1" type="email"
+                                        placeholder="Enter email..." required="required" aria-required="true"
+                                        class="form-control" aria-describedby="exampleInputGroup1__BV_description_">
+                                </div>
+                            </div>
+                            <div id="exampleInputGroup2" role="group" class="form-group">
+                                <div><input #inputPassword formControlName="password" id="exampleInput2" type="password"
+                                        placeholder="Enter password..." required="required" aria-required="true"
+                                        class="form-control"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer text-left">                            
+                            <div class="">
+                                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-lg not-allowed">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center text-black opacity-8 mt-3">
+                
+            </div>
+        </div>
+    </div>
+</div>

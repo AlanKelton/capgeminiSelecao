@@ -1,0 +1,47 @@
+<div class="card text-left">
+  <img class="card-img-top" src="holder.js/100px180/" alt="">
+  <div class="card-body">
+    <h4 class="card-title">Account Details</h4>
+    <p class="card-text">
+        <tr class="row">    
+            <td class="col-5">        
+                <div>
+                    Account Number:
+                    {{account_number}}           
+                </div>
+            </td>           
+        </tr>
+        <tr class="row">    
+            <td class="col-5">        
+                <div>
+                    Balance:
+                    {{balance}}
+                </div>
+            </td>           
+        </tr>
+        <mw-vmessage *ngIf="error"
+            text="Your section has expired! Do login again." class="mb-2">
+            
+        </mw-vmessage>
+        <button *ngIf="error" class="mb-2" (click)="gotoLoginPage()">Login</button>
+
+        <tr class="row">    
+            <td class="col-2">
+                <button (click)="getBalance()">
+                    Balance
+                </button>
+            </td>        
+            <td class="col-2">
+                <button (click)="deposit()">
+                    Deposit
+                </button>   
+            </td> 
+            <td class="col-2">
+                <button (click)="withdraw()">
+                    Withdraw
+                </button>   
+            </td>              
+        </tr>            
+    </p>
+  </div>
+</div>
